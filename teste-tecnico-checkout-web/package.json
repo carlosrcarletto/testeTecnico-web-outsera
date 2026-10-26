@@ -1,0 +1,21 @@
+{
+  "name": "teste-tecnico-checkout-web",
+  "version": "1.0.0",
+  "description": "Testes E2E do fluxo de checkout de um e-commerce de exemplo com Playwright e Allure",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "loja": "node app/server.js",
+    "test": "playwright test",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results",
+    "test:allure": "npm run test; npm run allure:generate"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.3",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.13.0"
+  }
+}

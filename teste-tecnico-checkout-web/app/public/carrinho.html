@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loja Exemplo — Carrinho</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html" class="logo">🛒 Loja Exemplo</a>
+    <a href="carrinho.html" class="link-carrinho">Carrinho (<span data-testid="contador-carrinho">0</span>)</a>
+  </header>
+  <main>
+    <h1>Carrinho</h1>
+    <p id="carrinho-vazio" data-testid="carrinho-vazio" hidden>Seu carrinho está vazio.</p>
+    <div id="conteudo-carrinho">
+      <div class="rolagem">
+        <table>
+          <thead>
+            <tr><th>Produto</th><th>Preço</th><th>Quantidade</th><th>Total</th><th></th></tr>
+          </thead>
+          <tbody id="itens-carrinho"></tbody>
+        </table>
+      </div>
+    </div>
+    <dl class="totais">
+      <dt>Subtotal</dt><dd data-testid="subtotal"></dd>
+      <dt>Frete</dt><dd data-testid="frete"></dd>
+      <dt class="destaque">Total</dt><dd class="destaque" data-testid="total"></dd>
+    </dl>
+    <div class="acoes">
+      <a href="index.html" class="botao-secundario">Continuar comprando</a>
+      <button type="button" id="finalizar-compra" class="botao">Finalizar compra</button>
+    </div>
+  </main>
+  <script src="js/loja.js"></script>
+  <script src="js/carrinho.js"></script>
+</body>
+</html>

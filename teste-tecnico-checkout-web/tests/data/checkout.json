@@ -1,0 +1,50 @@
+{
+  "clienteValido": {
+    "nome": "Maria da Silva",
+    "cep": "01310-100",
+    "endereco": "Avenida Paulista",
+    "numero": "1000",
+    "complemento": "Apto 12",
+    "cidade": "São Paulo",
+    "estado": "SP"
+  },
+  "cartaoVisa": {
+    "nome": "MARIA DA SILVA",
+    "numero": "4111 1111 1111 1111",
+    "validade": "12/35",
+    "cvv": "123"
+  },
+  "cartaoMastercard": {
+    "nome": "MARIA DA SILVA",
+    "numero": "5555555555554444",
+    "validade": "08/34",
+    "cvv": "456"
+  },
+  "cartaoRecusadoPelaOperadora": {
+    "nome": "MARIA DA SILVA",
+    "numero": "4000 0000 0000 0002",
+    "validade": "12/35",
+    "cvv": "123"
+  },
+  "cartoesInvalidos": [
+    { "descricao": "com dígito verificador errado (Luhn)", "numero": "4111 1111 1111 1112" },
+    { "descricao": "com letras", "numero": "4111 abcd 1111 1111" },
+    { "descricao": "curto demais", "numero": "4111 1111" },
+    { "descricao": "vazio", "numero": "", "mensagem": "Informe o número do cartão." }
+  ],
+  "mensagemCartaoInvalido": "Número do cartão inválido.",
+  "validadeVencida": { "valor": "01/20", "mensagem": "Cartão vencido." },
+  "validadeFormatoInvalido": { "valor": "13/30", "mensagem": "Validade inválida. Use MM/AA." },
+  "cvvIncompleto": { "valor": "12", "mensagem": "CVV inválido." },
+  "cepInvalido": { "valor": "1234-56", "mensagem": "CEP inválido. Use 8 dígitos." },
+  "enderecosIncompletos": [
+    { "campo": "nome", "descricao": "sem nome do destinatário", "mensagem": "Informe o nome completo." },
+    { "campo": "cep", "descricao": "sem CEP", "mensagem": "Informe o CEP." },
+    { "campo": "endereco", "descricao": "sem rua", "mensagem": "Informe o endereço." },
+    { "campo": "numero", "descricao": "sem número", "mensagem": "Informe o número." },
+    { "campo": "cidade", "descricao": "sem cidade", "mensagem": "Informe a cidade." },
+    { "campo": "estado", "descricao": "sem estado", "mensagem": "Selecione o estado." }
+  ],
+  "mensagemPagamentoRecusado": "Pagamento recusado pela operadora",
+  "nomeCartaoComNumeros": "MARIA 1234"
+}

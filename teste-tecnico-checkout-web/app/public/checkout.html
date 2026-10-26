@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loja Exemplo — Checkout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html" class="logo">🛒 Loja Exemplo</a>
+    <a href="carrinho.html" class="link-carrinho">Carrinho (<span data-testid="contador-carrinho">0</span>)</a>
+  </header>
+  <main class="checkout">
+    <h1>Finalizar compra</h1>
+    <div id="resumo-erros" class="alerta" role="alert" data-testid="resumo-erros" hidden>
+      Corrija os campos destacados para continuar.
+    </div>
+    <div id="erro-pagamento" class="alerta" role="alert" data-testid="erro-pagamento" hidden></div>
+
+    <div class="colunas">
+      <form id="form-checkout" novalidate>
+        <fieldset>
+          <legend>Endereço de entrega</legend>
+        <div class="campo">
+          <label for="nome">Nome completo</label>
+          <input id="nome" name="nome" type="text" aria-describedby="erro-nome" autocomplete="name">
+          <p id="erro-nome" class="erro" data-testid="erro-nome" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="cep">CEP</label>
+          <input id="cep" name="cep" type="text" aria-describedby="erro-cep" inputmode="numeric" maxlength="9" autocomplete="postal-code">
+          <p id="erro-cep" class="erro" data-testid="erro-cep" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="endereco">Endereço</label>
+          <input id="endereco" name="endereco" type="text" aria-describedby="erro-endereco" autocomplete="address-line1">
+          <p id="erro-endereco" class="erro" data-testid="erro-endereco" hidden></p>
+        </div>
+          <div class="linha">
+        <div class="campo">
+          <label for="numero">Número</label>
+          <input id="numero" name="numero" type="text" aria-describedby="erro-numero" >
+          <p id="erro-numero" class="erro" data-testid="erro-numero" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="complemento">Complemento (opcional)</label>
+          <input id="complemento" name="complemento" type="text">
+        </div>
+          </div>
+          <div class="linha">
+        <div class="campo">
+          <label for="cidade">Cidade</label>
+          <input id="cidade" name="cidade" type="text" aria-describedby="erro-cidade" autocomplete="address-level2">
+          <p id="erro-cidade" class="erro" data-testid="erro-cidade" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="estado">Estado</label>
+          <select id="estado" name="estado" aria-describedby="erro-estado">
+          <option value="">Selecione</option>
+          <option value="AC">AC</option>
+          <option value="AL">AL</option>
+          <option value="AP">AP</option>
+          <option value="AM">AM</option>
+          <option value="BA">BA</option>
+          <option value="CE">CE</option>
+          <option value="DF">DF</option>
+          <option value="ES">ES</option>
+          <option value="GO">GO</option>
+          <option value="MA">MA</option>
+          <option value="MT">MT</option>
+          <option value="MS">MS</option>
+          <option value="MG">MG</option>
+          <option value="PA">PA</option>
+          <option value="PB">PB</option>
+          <option value="PR">PR</option>
+          <option value="PE">PE</option>
+          <option value="PI">PI</option>
+          <option value="RJ">RJ</option>
+          <option value="RN">RN</option>
+          <option value="RS">RS</option>
+          <option value="RO">RO</option>
+          <option value="RR">RR</option>
+          <option value="SC">SC</option>
+          <option value="SP">SP</option>
+          <option value="SE">SE</option>
+          <option value="TO">TO</option>
+          </select>
+          <p id="erro-estado" class="erro" data-testid="erro-estado" hidden></p>
+        </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Pagamento com cartão de crédito</legend>
+        <div class="campo">
+          <label for="nomeCartao">Nome impresso no cartão</label>
+          <input id="nomeCartao" name="nomeCartao" type="text" aria-describedby="erro-nomeCartao" autocomplete="cc-name">
+          <p id="erro-nomeCartao" class="erro" data-testid="erro-nomeCartao" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="numeroCartao">Número do cartão</label>
+          <input id="numeroCartao" name="numeroCartao" type="text" aria-describedby="erro-numeroCartao" inputmode="numeric" maxlength="23" autocomplete="cc-number">
+          <p id="erro-numeroCartao" class="erro" data-testid="erro-numeroCartao" hidden></p>
+        </div>
+          <div class="linha">
+        <div class="campo">
+          <label for="validade">Validade (MM/AA)</label>
+          <input id="validade" name="validade" type="text" aria-describedby="erro-validade" inputmode="numeric" maxlength="5" placeholder="MM/AA" autocomplete="cc-exp">
+          <p id="erro-validade" class="erro" data-testid="erro-validade" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="cvv">CVV</label>
+          <input id="cvv" name="cvv" type="text" aria-describedby="erro-cvv" inputmode="numeric" maxlength="4" autocomplete="cc-csc">
+          <p id="erro-cvv" class="erro" data-testid="erro-cvv" hidden></p>
+        </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" id="confirmar-pagamento" class="botao botao-grande">Confirmar pagamento</button>
+      </form>
+
+      <aside class="resumo" aria-labelledby="titulo-resumo">
+        <h2 id="titulo-resumo">Resumo do pedido</h2>
+        <ul id="resumo-itens"></ul>
+        <dl class="totais">
+          <dt>Subtotal</dt><dd data-testid="resumo-subtotal"></dd>
+          <dt>Frete</dt><dd data-testid="resumo-frete"></dd>
+          <dt class="destaque">Total</dt><dd class="destaque" data-testid="resumo-total"></dd>
+        </dl>
+      </aside>
+    </div>
+  </main>
+  <script src="js/loja.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

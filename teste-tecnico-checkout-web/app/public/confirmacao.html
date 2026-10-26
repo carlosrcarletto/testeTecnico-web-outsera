@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loja Exemplo — Pedido confirmado</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html" class="logo">🛒 Loja Exemplo</a>
+    <a href="carrinho.html" class="link-carrinho">Carrinho (<span data-testid="contador-carrinho">0</span>)</a>
+  </header>
+  <main class="confirmacao">
+    <h1>Pedido confirmado!</h1>
+    <p>Obrigado pela compra. Número do pedido: <strong data-testid="numero-pedido"></strong></p>
+    <section>
+      <h2>Itens</h2>
+      <ul id="itens-pedido"></ul>
+      <p>Total pago: <strong data-testid="total-pedido"></strong></p>
+      <p data-testid="pagamento-pedido"></p>
+    </section>
+    <section>
+      <h2>Entrega</h2>
+      <p data-testid="entrega-nome"></p>
+      <p data-testid="entrega-endereco"></p>
+      <p data-testid="entrega-cidade"></p>
+    </section>
+    <a href="index.html" class="botao">Voltar para a loja</a>
+  </main>
+  <script src="js/loja.js"></script>
+  <script src="js/confirmacao.js"></script>
+</body>
+</html>

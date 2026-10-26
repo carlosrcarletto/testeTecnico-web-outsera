@@ -1,0 +1,148 @@
+:root {
+  --fundo: #f6f7f9;
+  --superficie: #ffffff;
+  --texto: #1d2330;
+  --suave: #5b6475;
+  --borda: #dde1e8;
+  --primaria: #1f6feb;
+  --primaria-escura: #1857b8;
+  --erro: #c62828;
+  --erro-fundo: #fdecea;
+  --sucesso: #1b7f3b;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borda);
+}
+.logo { font-weight: 700; font-size: 1.2rem; color: var(--texto); text-decoration: none; }
+.link-carrinho { color: var(--primaria); font-weight: 600; text-decoration: none; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+h1 { margin-top: 0; }
+.subtitulo { color: var(--suave); margin-top: -0.5rem; }
+
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.produto {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.produto h2 { font-size: 1rem; margin: 0.5rem 0; flex: 1; }
+.produto-imagem { font-size: 3rem; text-align: center; background: var(--fundo); border-radius: 8px; padding: 1rem; }
+.preco { font-size: 1.25rem; font-weight: 700; margin: 0 0 0.75rem; }
+
+.botao, .botao-secundario {
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+.botao { background: var(--primaria); color: #fff; }
+.botao:hover:not(:disabled) { background: var(--primaria-escura); }
+.botao:disabled { background: #9aa4b5; cursor: not-allowed; }
+.botao-secundario { background: transparent; color: var(--primaria); border: 1px solid var(--primaria); }
+.botao-grande { width: 100%; padding: 0.9rem; font-size: 1.05rem; }
+.botao-link { background: none; border: none; color: var(--erro); cursor: pointer; font: inherit; text-decoration: underline; }
+
+.aviso {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--sucesso);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.rolagem { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: var(--superficie); border-radius: 10px; overflow: hidden; }
+th, td { text-align: left; padding: 0.75rem; border-bottom: 1px solid var(--borda); }
+.quantidade { width: 4.5rem; padding: 0.35rem; }
+
+.totais {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 1rem;
+  max-width: 320px;
+  margin: 1rem 0 1rem auto;
+}
+.totais dd { margin: 0; text-align: right; }
+.destaque { font-weight: 700; font-size: 1.15rem; }
+.acoes { display: flex; justify-content: flex-end; gap: 0.75rem; flex-wrap: wrap; }
+
+.colunas { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; align-items: start; }
+@media (max-width: 800px) { .colunas { grid-template-columns: 1fr; } }
+
+fieldset {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.25rem;
+}
+legend { font-weight: 700; padding: 0 0.4rem; }
+.linha { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.campo { margin-bottom: 0.85rem; }
+.campo label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+.campo input, .campo select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font: inherit;
+}
+.campo [aria-invalid="true"] { border-color: var(--erro); background: var(--erro-fundo); }
+.erro { color: var(--erro); font-size: 0.9rem; margin: 0.25rem 0 0; }
+
+.alerta {
+  background: var(--erro-fundo);
+  color: var(--erro);
+  border: 1px solid var(--erro);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.resumo {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+.resumo h2 { margin-top: 0; font-size: 1.1rem; }
+.resumo ul { padding-left: 1.1rem; }
+.resumo .totais { margin: 0; max-width: none; }
+
+.confirmacao section {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+.confirmacao h1 { color: var(--sucesso); }

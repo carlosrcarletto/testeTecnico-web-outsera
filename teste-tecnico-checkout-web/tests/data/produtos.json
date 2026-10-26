@@ -1,0 +1,8 @@
+{
+  "fone": { "nome": "Fone de Ouvido Bluetooth", "preco": 199.9 },
+  "mouse": { "nome": "Mouse sem Fio", "preco": 89.9 },
+  "teclado": { "nome": "Teclado Mecânico", "preco": 349.9 },
+  "suporte": { "nome": "Suporte para Notebook", "preco": 129.9 },
+  "frete": 19.9,
+  "freteGratisAPartirDe": 300
+}

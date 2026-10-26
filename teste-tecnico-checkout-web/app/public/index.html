@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loja Exemplo — Produtos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html" class="logo">🛒 Loja Exemplo</a>
+    <a href="carrinho.html" class="link-carrinho">Carrinho (<span data-testid="contador-carrinho">0</span>)</a>
+  </header>
+  <main>
+    <h1>Produtos</h1>
+    <p class="subtitulo">Frete grátis em compras a partir de R$ 300,00.</p>
+    <div id="lista-produtos" class="grade"></div>
+    <div id="aviso" class="aviso" role="status" data-testid="aviso-carrinho" hidden></div>
+  </main>
+  <script src="js/loja.js"></script>
+  <script src="js/vitrine.js"></script>
+</body>
+</html>
